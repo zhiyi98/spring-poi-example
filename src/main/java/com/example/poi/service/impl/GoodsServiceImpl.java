@@ -1,6 +1,8 @@
 package com.example.poi.service.impl;
 
+import com.example.poi.entity.Goods;
 import com.example.poi.entity.Users;
+import com.example.poi.enums.GoodsEnums;
 import com.example.poi.repository.GoodsRepository;
 import com.example.poi.service.GoodsService;
 import org.apache.commons.lang3.StringUtils;
@@ -68,11 +70,11 @@ public class GoodsServiceImpl implements GoodsService {
         if (StringUtils.isBlank(value)) {
             return;
         }
-        if (j == 0) {
+        if (j == GoodsEnums.id.getCode()) {
             users.setId(Long.valueOf(value));
-        } else if (j == 1) {
+        } else if (j == GoodsEnums.name.getCode()) {
             users.setName(value);
-        } else if (j == 2) {
+        } else if (j == GoodsEnums.age.getCode()) {
             users.setAge(Long.valueOf(value));
         }
     }
