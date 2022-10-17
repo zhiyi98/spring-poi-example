@@ -54,7 +54,9 @@ public class GoodsServiceImpl implements GoodsService {
                     this.setField(users, j, value);
                 }
                 // 存放集合
-                result.add(users);
+                if (users.getId() != null) {
+                    result.add(users);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
